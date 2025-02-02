@@ -7,7 +7,7 @@
 
 /* Apply a checkerboard background to the entire page */
 body {
-  background: url("../images/site/checkerboard.jpg")repeat;
+  background: url("../images/site/checkerboard.jpg") repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,6 +15,8 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   padding: 100px;
+  color: black;
+  /* Ensuring text is visible */
 }
 
 .eyecatch {
@@ -23,13 +25,8 @@ body {
   border-radius: 5px;
   width: 200px;
   height: auto;
-}
-
-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  color: black;
+  /* Text visibility fix */
 }
 
 .content {
@@ -43,7 +40,6 @@ content {
   grid-template-rows: auto 1fr;
 }
 
-
 .reviews li {
   padding: 10px;
 }
@@ -55,29 +51,23 @@ content {
   height: 90%;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
   border-radius: 10px;
+  color: black;
+  /* Ensuring contrast */
 }
 
 /* Car picture and text */
 .car-picture {
-  background: url("../images/vehicles/delorean.jpg")no-repeat;
+  background: url("../images/vehicles/delorean.jpg") no-repeat;
   background-size: 500px 200px;
-  height: auto;
-  width: auto;
   color: #01b0d3;
 }
 
 /* Upgrades container */
 .upgrades-container {
   text-align: center;
-}
-
-/* Upgrade items grid for PC */
-.upgrades-container {
   display: grid;
   grid-template-rows: auto 1fr;
-  /* First row for h2, second row for div */
   margin: 10px;
 }
 
@@ -85,7 +75,6 @@ content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  /* Optional: Adjust spacing */
 }
 
 .blue-bg {
@@ -97,28 +86,13 @@ content {
   border-radius: 5px;
   height: 100px;
   width: 200px;
+  color: white;
+  /* Ensuring readability */
 }
 
 .upgrades-container img {
   max-width: 100px;
   height: auto;
-}
-
-/* PC layout (default) */
-.upgrades-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  justify-items: center;
-}
-
-.upgrades-container {
-  grid-template-columns: 1fr;
-  /* Stack upgrades in a single column */
-}
-
-.upgrades-container .blue-bg {
-  width: 80%;
 }
 
 /* Mobile layout */
@@ -130,7 +104,6 @@ content {
 
   .upgrades-container {
     grid-template-columns: 1fr;
-    /* Stack upgrades in a single column */
   }
 
   .upgrades-container .blue-bg {
@@ -141,20 +114,10 @@ content {
     display: grid;
     grid-template-rows: 1fr;
     align-items: center;
-
-    content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-    }
   }
 
   body {
-    background: url("");
-    display: flex;
-    justify-content: none;
-    align-items: none;
+    background: none;
     font-family: Arial, sans-serif;
     padding: 0px;
   }
@@ -164,7 +127,7 @@ content {
     width: 100%;
     height: 100%;
     padding: 0px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    box-shadow: none;
     border-radius: 0px;
   }
 }
@@ -232,22 +195,67 @@ nav ul li:hover {
 }
 
 /* Mobile Responsive */
-@media screen and (max-width: 600px) {
-  #top-header {
-    flex-direction: column;
-    text-align: center;
+@media screen and (min-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 10px;
   }
 
-  #top-header #tools {
-    margin-top: 10px;
+  .upgrades-container {
+    grid-template-columns: 1fr;
+  }
+
+  .upgrades {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #top-header {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
   }
 
   nav ul {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    justify-content: center;
   }
 
-  nav ul li {
-    padding: 15px;
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+/* Larger Screens (Desktops) */
+@media screen and (min-width: 1300px) {
+  body {
+    background: url("../images/site/checkerboard.jpg") repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+  }
+
+  #wrapper {
+    width: 90%;
+    height: 90%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+
+  .content {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .upgrades-container {
+    grid-template-columns: 1fr;
+  }
+
+  .upgrades {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
